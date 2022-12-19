@@ -1,0 +1,48 @@
+@use "./variables";
+
+@mixin navbar-text {
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: variables.$white;
+}
+
+@mixin custom-divider($background-color) {
+  .divider-custom {
+    font-size: 2rem;
+    width: 100%;
+
+    .divider-custom-line {
+      width: 150px;
+      height: 5px;
+      background-color: $background-color;
+    }
+
+    .divider-custom-icon {
+      color: $background-color;
+    }
+  }
+}
+
+@mixin section-header-with-divider($color) {
+  .section-header-container {
+    .section-heading {
+      font-weight: bolder;
+      color: $color;
+      font-size: 2.8rem;
+    }
+
+    @include custom-divider($color);
+  }
+}
+
+@mixin footer-section {
+  .header {
+    font-size: 1.6rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+
+  .content {
+    font-size: 1.1rem;
+  }
+}

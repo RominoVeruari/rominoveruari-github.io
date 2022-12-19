@@ -1,0 +1,5 @@
+@use "../abstracts/variables";
+
+@use "./bootstrap-5.0.2/scss/bootstrap.scss" with (
+  $font-family-base: variables.$primary-font
+);

@@ -1,0 +1,72 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+#home {
+  #who-am-i {
+    background-color: variables.$teal;
+
+    .avatar {
+      width: 250px;
+    }
+
+    .heading {
+      font-size: 4rem;
+      font-weight: bolder;
+    }
+
+    @include mixins.custom-divider(variables.$white);
+
+    .subheading {
+      font-size: 1.4rem;
+    }
+  }
+
+  #portfolio {
+    @include mixins.section-header-with-divider(variables.$secondary);
+
+    .portfolio-item {
+      .details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        color: transparent;
+        transition: color variables.$default-transition-duration,
+          background-color variables.$default-transition-duration;
+        cursor: pointer;
+
+        &:hover {
+          background-color: variables.$black-transparent-80;
+          color: white;
+        }
+
+        .project-name {
+          font-weight: bolder;
+          font-size: 1.6rem;
+          text-transform: uppercase;
+          margin-bottom: 30px;
+        }
+
+        .project-tech-stack {
+          font-size: 1rem;
+          font-weight: bold;
+        }
+
+        .project-description {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  #about {
+    background-color: variables.$teal;
+
+    @include mixins.section-header-with-divider(variables.$white);
+  }
+
+  #contact {
+    @include mixins.section-header-with-divider(variables.$secondary);
+  }
+}

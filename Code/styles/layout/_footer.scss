@@ -1,0 +1,27 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+#footer {
+  background-color: variables.$secondary;
+
+  .location {
+    @include mixins.footer-section();
+  }
+
+  .links {
+    @include mixins.footer-section();
+
+    .btn-social {
+      height: 32px;
+      width: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+  }
+
+  .about-me {
+    @include mixins.footer-section();
+  }
+}
